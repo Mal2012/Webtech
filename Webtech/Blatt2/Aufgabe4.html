@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>&Uuml;bung zu CSS</title>
+<meta http-equiv="content-type" content="text/xhtml; charset=UTF-8" />
+<meta http-equiv="expires" content="Sat, 31 Dec 2040 00:00:00 GMT" />
+<meta name="author" content="Malcolm Kögler" />
+<meta name="keywords" lang="de" content="" />
+<style type="text/css">
+body {
+background-color: yellow;
+}
+h1 {
+color:blue;
+font-size:16pt;
+}
+table{border: solid black; font-family: serif; font-style: italic; font-size: 16px; }
+td{
+padding-right: 30px;
+}
+tr:nth-of-type(2n-1) td:nth-of-type(2n-1), tr:nth-of-type(2n) td:nth-of-type(2n){
+background: lightblue;
+font-family: sans-serif;
+}
+table.tabelle2{border: 1px dashed black; font-size:12px}
+table.tabelle2 td {border: 1px solid red; padding:30px }
+table.tabelle2 tr:nth-of-type(2n-1) td:nth-of-type(2n-1), table.tabelle2 tr:nth-of-type(2n) td:nth-of-type(2n){
+font-style: normal;
+font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+<h1>Stylesheets: Tabellen</h1>
+
+<p>Die nachfolgende Tabelle hat kursive Schrift der Gr&ouml;&szlig;e 16pt und eine &auml;u&szlig;ere, schwarze Umrandung.</p>
+
+<table>
+<tr>
+<td>Zelle mit hellblauem Hintergrund</td>
+<td>Zelle mit kursiver Schrift der Art <br/>"serif"</td>
+</tr>
+<tr>
+<td>Zelle mit kursiver Schrift der Art <br/>"serif"</td>
+<td>Zelle mit hellblauem Hintergrund</td>
+</tr>
+
+</table>
+
+<p>Die nachfolgende Tabelle hat Schriftgr&ouml;&szlig;e 12pt, eine &auml;u&szlig;ere, schwarz gestrichelte Umrandung der Gr&ouml;&szlig;e 1px.
+<br />
+Die Tabellenzellen dieser Tabelle haben ebenfalls eine rote Umrandung der Gr&ouml;&szlig;e 1px.<br />
+F&uuml;r die Tabellenzellen ist ein Innenabstand von 30px einzustellen.</p>
+
+<table class="tabelle2">
+<tr>
+<td>Zelle mit hellblauem Hintergrund</td>
+<td>Zelle mit kursiver Schrift der Art "serif"</td>
+</tr>
+<tr>
+<td >Zelle mit kursiver Schrift der Art "serif"</td>
+<td >Zelle mit hellblauem Hintergrund</td>
+</tr></table>
+
+ <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+</body>
+</html>
+
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>&Uuml;bung zu CSS: Listen und Pseudoformate</title>
+<meta http-equiv="content-type" content="text/xhtml; charset=UTF-8" />
+<meta http-equiv="expires" content="Sat, 31 Dec 2040 00:00:00 GMT" />
+<meta name="author" content="Malcolm Kögler" />
+<meta name="keywords" lang="de" content="" />
+<style type="text/css">
+body{
+font-family: Helvetica;
+background-color: #ffffcc;
+}
+h1 {
+color:blue;
+font-size:16pt;
+}
+h2{
+font-size:16pt;
+}
+ul{
+list-style-type: circle;
+}
+a:link{color:green;
+}
+a:visited{
+color:red;
+}
+ol{ font-family: Times; font-style: italic;}
+body > ul:nth-child(2) > li:last-child{list-style-image: url("smileyklein.gif");}
+
+ol > li> span{background: url("smileyganzklein.gif") 45px 0 no-repeat;} 
+ol > li > span:before{content:"Schritt "; color: blue; font-style: normal; margin-right: 25px}
+ol > li > span:after{content:" Minute(n):"; font-style:normal;}
+ol > li:last-child > span:after{content:" Minute(n): (SUPER)"; font-style: normal;}
+
+ol > li > span > span {
+font-family: "Courier New";
+font-style: normal;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Stylesheets: Listen und Pseudoformate</h1>
+
+<ul>
+	<li><h2>Problem</h2>
+		<span>PC in Betrieb nehmen.</span>
+	</li>
+	<li><h2>L&ouml;sungsidee</h2>
+		<span>PC kaufen, auspacken, alle Kabel anschlie&szlig;en und dann einschalten:</span>
+	</li>
+	<li><h2>Vorgehen und Dauer</h2>
+		<ol>
+			<li>
+			<span><span>Kaufen: 120</span></span>
+			</li>
+			<li>
+			<span><span>Auspacken: 8</span></span>
+			</li>
+			<li>
+			<span><span>Abschlie&szlig;en: 45 (mit Fehlersuche)</span></span>
+			</li>
+			<li>
+			<span><span>Einschalten: 1</span></span>
+			</li>
+		</ol>
+	</li>
+	<li><h2>Zum Schluss</h2>
+		<span>Das war doch ganz einfach!</span>
+	</li>
+
+</ul>
+
+<p><a href="Aufgabe1.html" >Zur Aufgabe 1 dieses &Uuml;bungsblatts</a></p>
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+</body>
+</html>
+
+

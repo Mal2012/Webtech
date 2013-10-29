@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+<head>
+<title>&Uuml;bung zu CSS</title>
+<meta http-equiv="content-type" content="text/xhtml; charset=UTF-8" />
+<meta http-equiv="expires" content="Sat, 31 Dec 2040 00:00:00 GMT" />
+<meta name="author" content="Malcolm Kögler" />
+<meta name="keywords" lang="de" content="" />
+<link rel="stylesheet" type="text/css" href="Aufgabe3.css" />
+<style type="text/css">
+#span10{
+font-size: 8pt;
+}
+
+#span12{
+font-size: 10pt;
+}
+</style>
+</head>
+<body>
+<h1>Stylesheets: <br/> Verwenden von Klassen, kontextabh&auml;ngigen Selektor und individuellen Selektoren</h1>
+<p>1. F&uuml;r das Element body sind die Schriftart auf "helvetica" und die Hintergrundfarbe auf "#e0e0e0" einzustellen.</p>
+<p>2. F&uuml;r das Element h1 sind die Schriftfarbe blau und die Schriftgr&ouml;&szlig;e auf 16pt einzustellen.</p>
+<p>3. F&uuml;r das Element p ohne Zusatzangaben wie Kontext oder Klasse sind die Voreinstellungen zu lassen.</p>
+<p class="mono">4. Dieser Paragraph ist von der Klasse mono. F&uuml;r solche Paragraphen ist die Schriftart monospace einzustellen.</p>
+<p class="rot">5. Dieser Paragraph ist von der Klasse rot. F&uuml;r alle Elemente der Klasse rot ist die Schriftfarbe rot einzustellen.</p>
+<p><span>6. Dies ist ein Element span im Kontext eines Elementes p.</span><br/>Hier ist die Schriftgr&ouml;&szlig;e 18 einzustellen.</p>
+<h4><span class="hintergrundnavy">7. Dies ist ein Element span der Klasse hintergrundnavy im Kontext eines Elementes h4.</span><br/>F&uuml;r alle Elemente der Klasse hintergrundnavy sind die Hintergrundfarbe auf navy, 
+die Schriftfarbe auf wei&szlig; und die Schriftgr&ouml;&szlig;e auf 12pt zu setzen.</h4>
+<p><span class="hintergrundnavy">8. Dies ist ein Element span der Klasse hintergrundnavy im Kontext eines Elementes p.</span><br/> F&uuml;r alle Elemente der Klasse
+hintergrundnavy sind die Hintergrundfarbe auf navy, die Schriftfarbe auf wei&szlig; und die Schriftgr&ouml;&szlig;e auf 12pt zu setzen.<br />
+Beachte: Welche Deklaration hat Vorrang: Kontext oder Klasse?</p>
+<p><span id="span10" class="hintergrundnavy">9. Dies ist ein Element span der Klasse hintergrundnavy im Kontext des Elementes p.<br /> Das Element span hat die id="span10"</span><br/>
+F&uuml;r das Element mit der id="span10" ist die Schriftgr&ouml;&szlig;e auf 8pt zu setzen.<br /> Beachte: Welche Deklaration hat Vorrang: Individual oder Klasse?
+</p>
+<h3 class="rot">10. Dies ist ein Element h3 der Klasse rot.</h3>
+<h3 class="hintergrundnavy"><span>11. Dies ist ein Element im Kontext eines Elements h3. <br /> Das Element h3 ist von der Klasse hintergrundnavy. <br /> F&uuml;r diese Konstellation ist als Schriftgr&ouml;&szlig;e ist 14pt einzustellen.</span></h3>
+
+<p><span id="span12" class="rot">12. Dies ist ein Element span der Klasse rot im Kontext des Elements p.<br /> Das Element span hat die id="span12".</span><br/> Wenn das Element span mit der id="span12" als Klasse rot hat, dann ist die 
+Schriftgr&ouml;&szlig;e auf 10pt setzen.</p>
+
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+</body>
+</html>
+
+

@@ -1,0 +1,34 @@
+.hintergrundnavy{
+background-color: navy;
+	color: white;
+}
+.rot{
+	color:red;
+}
+body{
+	font-family: Helvetica;
+	background-color: "#e0e0e0";
+}
+h1{
+	color: blue;
+	font-size: 16pt;
+}
+p.mono{
+	font-family: monospace;
+}
+p span{
+	font-size: 18pt;
+}
+
+h4 span.hintergrundnavy{
+	font-size: 12pt;
+}
+p span.hintergrundnavy{
+	font-size: 12pt;
+}
+h3.hintergrundnavy span{
+	font-size: 14pt;
+}
+
+
+<
