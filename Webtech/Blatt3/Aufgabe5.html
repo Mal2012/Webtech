@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Aufgabe5</title>
+	<style type="text/css">
+	body{
+		background-color: #FFFFCC;
+		margin:0px;
+		padding: 0px;
+	}
+
+		a{
+			color: black;
+		}
+		a:active{
+			font-weight: bold;
+			background-color: yellow;
+		}
+		
+		a:visited{
+			color: red;
+		}
+		a:hover{
+			font-style: italic;
+		}
+		
+		.sidebar{
+			position: absolute;
+			background: navy;
+			width: 150px;
+			min-height: 100%;
+			margin-right: 10px;
+			top:0px;
+}
+		.main{
+			width: 87%;
+			position: relative;
+			left: 169px;
+		}
+		
+	</style>
+	
+	<style type="text/css" media="print">
+	body{
+		background-image: url(smileyvier.gif);
+		background-size: 100%;
+	}
+		
+		.sidebar{
+			display: none;
+}
+		.main{
+		width: 90%;
+		left: 10px;
+		}
+	
+	</style>
+	</head>
+
+	<body>
+<div class="sidebar">
+	<a href="Aufgabe1.html">Beispiel 1</a><br />
+	<a href="Aufgabe2.html">Beispiel 2</a><br />
+	<a href="Aufgabe2a.html">Beispiel 2a</a><br />
+	<a href="Aufgabe3.html">Beispiel 3</a><br />
+	<a href="Aufgabe3b.html">Beispiel 3b</a><br />
+	<a href="Aufgabe3c.html">Beispiel 3c</a><br />
+	<a href="Aufgabe4.html">Beispiel 4</a><br />
+	<a href="Aufgabe5.html">Beispiel 5</a><br />
+	<a href="Aufgabe6.html">Beispiel 6</a><br />
+</div>
+<div class="main">
+<h1>Ausgabemedien im Stylesheet ber&uuml;cksichtigen</h1>
+<h2>Grunds&auml;tzliches</h2>
+
+<p>Mit dem Attribut media beim Element link k&ouml;nnen verschiedene Ausgabemedien ber&uuml;cksichtigt werden. Mit dem Attributwert screen wird die Darstellung der Webseite auf dem Bildschirm gesteuert. Die Ausgabe auf dem Drucker kann mit dem Attributwert print geregelt werden.</p>
+<h2>Implementieren und Testen</h2>
+
+<p>Zum Test eines Stylesheets f&uuml;r die Ausgabe auf dem Drucker kann die Druckervorschau verwendet werden. Allerdings werden in der Druckvorschau und auch beim Druck keine Hintergrundfarben oder Hintergrundelemente wie Bilder in der Voreinstellung von Firefox 3.0 dargestellt.
+Es gibt bei Firefox 3.0 eine Option unter Seite einrichten: Hintergrund drucken (Farben und Bilder).</p>
+<h2>Beispiel</h2>
+
+
+<p>Im vorliegenden Beispiel sind in der Browseransicht keine Wasserzeichen zu sehen. Wenn Sie die Seite ausdrucken wollen, dann sollen Smileys als Wasserzeichen gedruckt werden. Schauen Sie sich die Druckvorschau an.
+Die Smileys sollen auch gedruckt werden, wenn diese Option im Firefox ausgeschaltet ist!<br/>
+Au&szlig;erdem soll die Naviagationsleiste, im Browser auf der linken Seite zu sehen, nicht mit gedruckt werden.<br/>
+<br />
+Desweiteren sollen im Druck die URLs zu den Hyperlinks erscheinen, die in der Browseransicht nicht angezeigt werden.</p>
+
+<h2>Literatur und Referenzen</h2>
+<p>
+F&uuml;r weitere Details wird auf die CSS-Spezifikation 2.1
+ (<a href="http://www.w3.org/TR/CSS2/">http://www.w3.org/TR/CSS2/</a>) verwiesen.<br />
+<br />
+Die M&ouml;glichkeit Ausgabemedien zu benutzen, ist in der Spezifikation zu CSS 1.0
+ (<a href="http:////www.w3.org/TR/REC-CSS1/">http:////www.w3.org/TR/REC-CSS1/</a>) nicht vorhanden.
+</p><p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+</div>
+ 
+	</body>
+</html>
