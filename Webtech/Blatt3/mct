@@ -1,0 +1,19 @@
+
+
+wenn (A) =10 ist, soll zu JA gesprungen werden:
+
+		CJNE A,#10,NEIN ;ist A!=10? J:springe nach Nein
+	LB: SJMP JA			;A=10, deshalb springe nach JA
+Nein:	...				;weiter bei A!=10
+
+
+wenn (A) <= 10 ist soll zu JA gesprungne werden:
+	CJNE A,#10,LB 	;ist A!=10? j:springe nach LB
+	SMJP JA			;A=10 deshalb springe nach JA
+LB  JC 	 JA			;A!=10 wenn A<10 (CY=1) dann springe nach JA
+NEIN: ...			; weiter bei A>10
+
+wenn (A)<10 ist soll zu JA gesprungen werden:
+	CJNE A,#10,LB	;ist A != 10? J:springe nach LB
+LB: JC  JA			;A=beliebig wenn A<10 (CY=1) dann springe nach JA
+NEIN: ... 			; weiter bei A>=10
