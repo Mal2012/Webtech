@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		
+		<title>a2</title>
+<style type="text/css" >
+	.tab{
+		display: table;
+	}
+	.zeile{
+		display: table-row;
+	}
+	.zelle{
+		
+		display: table-cell;
+	}
+	.boxcenter{
+		text-align: center;
+	}
+	
+</style>
+<script type="text/javascript">
+	<!--
+	var myvar;
+	 var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	function init(){
+		var id = Math.ceil(Math.random()*100000);
+		document.getElementsByName("id")[0].value = id;
+		var jetzt = new Date();
+		var Tag = jetzt.toLocaleString();
+		document.getElementsByName("date")[0].value = Tag;
+		window.clearInterval(myvar);
+	}
+	function updateForm()
+		{
+  		myvar = window.setInterval("init()",0);
+		}	
+		
+	function check(){
+		if(document.getElementsByName("vorname")[0].value == ""){
+			alert("Bitte Vornamen eingeben!");
+		}else if(document.getElementsByName("nachname")[0].value == "" || document.getElementsByName("nachname")[0].value == "Mustermann")
+		{
+			alert("Bitte gueltigen Nachnamen eingeben!");
+		}else if(!re.test(document.getElementsByName("mail")[0].value)){
+			alert("Bitte gueltige E-Mail Adresse!");
+		}else if(document.getElementsByName("reason")[0].value == ""){
+		alert("Bitte Begruendung eingeben!");	
+		}else if(document.getElementsByName("erwachsen")[0].checked == false ){
+			alert("Nur fuer Erwachsene");
+		}else{
+			document.getElementsByName("id")[0].disabled = "";
+			document.getElementsByName("date")[0].disabled = "";
+			document.forms[0].submit();
+		}
+		
+		}	
+		
+	window.onload = init;
+	-->
+</script>
+
+
+	</head>
+
+	<body>
+	<h3>Der Meistertipp</h3>
+	<p>Wer wird n&auml;chster Saison Meister?</p>
+	
+	<form action="Aufgabe2b.html" method="get" onreset="updateForm();">
+		<div class="tab">
+				<div class="zeile">
+				<div class="zelle "><hr/></div>
+				<div class="zelle "><hr/></div>
+			</div>
+			<div class="zeile">
+				<div class="zelle">Meistertipp: </div>
+				<div class="zelle">
+					<select name="meister">
+						<option value="coburg" selected="selected">Coburg</option>
+						<option value="bla1" >Bla1</option>
+						<option value="bla2" >Bla2</option>
+						<option value="bla3" >Bla3</option>
+						<option value="bla4" >Bla4</option>
+						<option value="bla5" >Bla5</option>
+						<option value="bla6" >Bla6</option>
+						<option value="bla7" >Bla7</option>
+						<option value="bla8" >Bla8</option>
+					</select>
+				</div> 
+			</div>
+			<div class="zeile">
+				<div class="zelle">				</div>
+				<div class="zelle">Bitte gib eine kurze Begr&uuml;ndung f&uuml;r deinen Tipp ein:</div>
+			</div>
+			<div class="zeile">
+				<div class="zelle">Begr&uuml;ndung: </div>
+				<div class="zelle"><textarea name="reason" rows="8" cols="40"></textarea></div>
+			</div>
+				<div class="zeile">
+				<div class="zelle "><hr/></div>
+				<div class="zelle "><hr/></div>
+			</div>
+				<div class="zeile">
+				<div class="zelle ">Vorname: </div>
+				<div class="zelle "><input type="text" name="vorname" value="Hans"/></div>
+			</div>
+			<div class="zeile">
+				<div class="zelle ">Nachname: </div>
+				<div class="zelle "><input type="text" name="nachname" value="Mustermann"/></div>
+			</div>
+			<div class="zeile">
+				<div class="zelle ">E-Mail: </div>
+				<div class="zelle "><input type="text" name="mail" /></div>
+			</div>
+			
+			<div class="zeile">
+				<div class="zelle ">Geschlecht: </div>
+				<div class="zelle "><input type="radio" name="geschlecht" value="Mann" /> m&auml;nnlich</div>
+			</div>
+			<div class="zeile">
+				<div class="zelle "> </div>
+				<div class="zelle "><input type="radio" name="geschlecht" value="Frau" /> weiblich</div>
+			</div>
+			<div class="zeile">
+				<div class="zelle ">Erwachsen: </div>
+				<div class="zelle "><input type="checkbox" name="erwachsen" value="Ja"/> </div>
+			</div>
+			<div class="zeile">
+				<div class="zelle ">Verheitratet: </div>
+				<div class="zelle "><input type="checkbox" name="verheitratet" value="Ja"/> </div>
+			</div>
+				<div class="zeile">
+				<div class="zelle "><hr/></div>
+				<div class="zelle "><hr/></div>
+			</div>
+			<div class="zeile">
+				<div class="zelle ">W&auml;hler-ID: </div>
+				<div class="zelle "><input type="text" name="id" disabled="disabled"/></div>
+			</div>
+			<div class="zeile">
+				<div class="zelle ">Datum/Zeit: </div>
+				<div class="zelle "><input type="text" name="date" disabled="disabled"/></div>
+			</div>
+				<div class="zeile">
+				<div class="zelle "><hr/></div>
+				<div class="zelle "><hr/></div>
+			</div>
+		</div>
+		
+		<div class="boxcenter">
+			<input type="button" name="abschicken"  value="Daten absenden" onclick="check();"/><br/>
+			<input type="reset" name="zuruecksetzen" value="Zur&uuml;cksetzen (type = reset)"/><br />
+			<input type="button" name="reset2" value="Eigenes Reset" onclick="document.forms[0].reset();"/>		
+		</div>
+		
+		
+	</form>
+
+ <p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+	</body>
+</html>

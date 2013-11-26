@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<title>Erste Manipulation des DOM</title>
+
+<script>
+function init(){
+var bla = document.getElementById("bla");
+bla.innerHTML = "Geändert";
+var bla2 = document.getElementById("bla2");
+bla2.innerHTML = "<b>Geändert</b>";
+}
+window.onload = init;
+</script>
+<body>
+
+<ul>
+<li id="bla">bla </li>
+<li>blubb</li>
+<li id="bla2">penis</li>
+</ul>
+
+</body>
+
+</head>
+
+
+</html>

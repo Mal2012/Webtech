@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Java-Script Spiel: Zahlenraten</title>
+		
+		
+<script type="text/javascript">
+<!--
+var Ratezahl;
+var Zufallszahl;
+var Versuche = 0;
+function init() {
+	Zufallszahl = Math.ceil(Math.random() * 100);
+}
+function zufall() {
+	if(isNaN(document.getElementById('input').value)!=true){
+	Ratezahl = parseInt(document.getElementById('input').value);
+	
+	if (Ratezahl > Zufallszahl) {
+		Versuche++;
+		alert("Zu groﬂ");
+	}
+	if (Ratezahl < Zufallszahl) {
+		Versuche++;
+		alert("Zu klein");
+	}
+	if (Ratezahl == Zufallszahl) {
+		Versuche++;
+		alert("Richtig!");
+		alert("Du hast " + Versuche + " Versuche gebraucht.");
+		alert("Es wird eine neue Zufallszahl generiert.");
+		Versuche = 0;
+		Zufallszahl = Math.ceil(Math.random() * 100);
+	}
+	}else{
+		alert("Bitte eine Zahl eingeben!");
+	}
+}
+window.onload = init;
+-->
+</script>
+
+
+	</head>
+
+	<body>
+<h1>Zahlenraten</h1>
+<p>Gesucht ist eine Zahl zwischen 0 und 99 (jeweils einschlie&szlig;lich)</p>
+	<p>Raten Sie eine Zahl:</p>
+	<form action="">
+		
+		<p>
+			<input type="text" size="45" id="input"/>
+			<input type="button" value="Zahl pr&uuml;fen" onclick="zufall()"/>
+		</p>
+	</form>
+	</body>
+</html>
