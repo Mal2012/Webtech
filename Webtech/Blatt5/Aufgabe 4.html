@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Aufgabe 4</title>
+		
+	
+		
+		
+<script type="text/javascript">
+		/* <![CDATA[ */
+		datum = Date();
+		
+		function setDate(){
+			datum = Date();
+			for(i = 0; i<document.getElementsByClassName("date").length; i++){
+				if(document.getElementsByClassName("date")[i].tagName == "SPAN"){
+					document.getElementsByClassName("date")[i].innerHTML = datum.toLocaleString();
+				}else{
+					document.getElementsByClassName("date")[i].value = datum.toLocaleString();
+				}
+				
+			}
+			
+		}
+		
+				/* ]]> */
+</script>
+	</head>
+
+	<body onload="setDate(); setInterval('setDate()', 1000 )">
+	<h2>Einfache JavaScript Uhr</h2>
+	<h3>Zeit- und Datumsanzeige: </h3>
+	<p>Datum und Uhrzeit: <span class="date"></span></p>
+	<p>Datum und Uhrzeit: <input type="text"  size="57"class="date" value="test"/></p>
+	<p>Datum und Uhrzeit: <input type="button"  class="date" value="test"/></p>
+	</body>
+</html>

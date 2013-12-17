@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>DOM Zeichnen</title>
+<script language="JavaScript" type="text/javascript">
+function baum(){
+// Neues Fenster öffnen:
+kindFenster=open("","ausgabeFenster");//damit ist eine HTML Datei und ein Browser Fenster vorhanden
+// pre-Element für den Baum erzeugen:
+kf = kindFenster.document;//Abkürzung
+baum = kf.createElement("pre");//pre Tag wird im Ausgabefenster erstellt und Baum genannt
+kf.body.appendChild(baum);//pre Tag wird in den body des Ausgabefenster eingehängt
+
+// unterste DOM-Ebene schreiben:
+for (var i=0; i<document.childNodes.length; i++)//je nachdem wieviele Kinder vorhanden sind
+{
+var kind = document.childNodes[i];
+var el = kf.createElement("div");//div wird erzeugt und el genannt
+if (document.childNodes[i].nodeType==1)//nodeType 1 ist ein HTML Element
+{
+var inh = kf.createTextNode("+ "+kind.tagName);//Textknoten wird erzeugt und mit Inhalt = Tagnamen gefüllt
+el.appendChild(inh);//Textknoten wird in den div eingehängt
+baum.appendChild(el);//div wird in den pre Tag = Baum eingehängt
+holeKinder("",document.childNodes[i]);//weitere Kinder
+}
+}
+}
+
+function holeKinder(plusminus, element)
+{
+for (var i=0; i<element.childNodes.length; i++)
+{
+// Erst einmal den Baum um eine Zeile weitermalen. 
+// Die Reihe von Strichen und Plus-Zeichen, die 
+// links von denen der aktuellen DOM-Ebene stehen, 
+// wurde als Parameter plusminus übergeben.
+var el = kf.createElement("div");
+var inh = kf.createTextNode(plusminus+"|");
+el.appendChild(inh);
+baum.appendChild(el);
+
+// Dann schreiben wir die Inhalte der TextNodes und
+// die Tag-Namen der Elemente dieser Ebene:
+var kind = element.childNodes[i];
+var el = kf.createElement("div");
+if (element.childNodes[i].nodeType==1)
+{ 
+var neuInh = plusminus + "+--+ " + kind.tagName;
+var inh = kf.createTextNode(neuInh);
+el.appendChild(inh);
+baum.appendChild(el);
+// nächsten Rekursionsschritt starten:
+if (element.childNodes.length>i+1) holeKinder(plusminus+"| ", kind);
+else holeKinder(plusminus+" ", kind);
+}
+else if (element.childNodes[i].nodeType==3)//nodeType 3 ist Textnode
+{
+var neuInh = plusminus + "+-- " + kind.nodeValue;
+neuInh=neuInh.replace(/\n/g,"\\n");
+var inh = kf.createTextNode(neuInh);
+el.appendChild(inh);
+baum.appendChild(el);
+}
+}
+}
+</script>
+</head>
+<body>
+	<p>xycxycxycxycxyc<span>adsdfjgefa</span> <p>sadfasd</p>#vskfüs</p>
+</body>
+</html>

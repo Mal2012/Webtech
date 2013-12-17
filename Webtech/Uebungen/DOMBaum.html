@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>DOMBaum</title>
+<SCRIPT LANGUAGE="JavaScript">
+function getTreeList(node) {
+	if(node.hasChildNodes()) {
+		var nextNodes = node.childNodes;
+		var wholeTree = "<ul><li>"+node.nodeName+"</li>";
+		for(var i = 0; i < nextNodes.length; i++) {
+			wholeTree += "\t"+getTreeList(nextNodes[i])+"\n";
+		}
+		wholeTree += "</ul>";
+		return wholeTree;
+	} else {
+		if(node.nodeValue != "" && node.nodeValue != null) {
+			if(node.nodeValue.replace(/\n|\t|\s/g, "") != "") {
+				return "<ul><li>"+node.nodeName + ": "+node.nodeValue+"</li></ul>";
+			} else {
+				return "";
+			}
+		} else if(node.nodeValue == null) {
+			return "<ul><li>"+node.nodeName+"</li></ul>";
+		}
+	}
+}
+
+function getTreeDiv(node) {
+	if(node.hasChildNodes()) {
+		var nextNodes = node.childNodes;
+		var wholeTree = "<div style='float: left'><div style='clear: both; text-align: center;'>"+node.nodeName+"("+node.nodeType+")</div>";
+		for(var i = 0; i < nextNodes.length; i++) {
+			wholeTree += "\t"+getTreeDiv(nextNodes[i])+"\n";
+		}
+		wholeTree += "</div>";
+		return wholeTree;
+	} else {
+		if(node.nodeValue != "" && node.nodeValue != null) {
+			if(node.nodeValue.replace(/\n|\t|\s/g, "") != "") {
+				return "<div style='float: left'>"+node.nodeName + ": "+node.nodeValue+"("+node.nodeType+")</div>";
+			} else {
+				return "";
+			}
+		} else if(node.nodeValue == null) {
+			return "<div style='float: left'>"+node.nodeName+"("+node.nodeType+")</div>";
+		}
+	}
+}
+
+function placeTree(node, type) {
+	switch(type) {
+		case "list":
+			document.body.innerHTML = getTreeList(node);
+			break;
+		case "div":
+			document.body.innerHTML = getTreeDiv(node);
+			break;
+	}
+}
+</SCRIPT>
+<style type="text/css">
+	body{
+		width: 1000%;
+	}
+	div{
+		margin: 5px 10px;
+		border: 1px solid black;
+	}
+	
+	
+</style>
+	</head>
+
+	<body>
+<h2>Nummerierte Liste mit Startwert 7</h2>
+
+<ol start="7">
+  <li>bei Anette vorbeischauen</li>
+  <li>bei Bianca vorbeischauen</li>
+  <li>bei Christine vorbeischauen</li>
+</ol>
+
+
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Aufgabe2</title>
+
+<script type="text/javascript">
+		/* <![CDATA[ */
+	Fenster=open("","ausgabeFenster");	
+	f=Fenster.document;
+	
+	function createTreeNode(rootNode, destNode, depth) {
+	var list = f.createElement("ol");
+	var cur_node = f.createElement("li");
+	var count = 0;
+	cur_node.appendChild(f.createTextNode(depth+"."+rootNode.nodeName+" *** "+ rootNode.nodeValue + " *** "+ rootNode.nodeType));
+	list.appendChild(cur_node);
+	
+	if(rootNode.hasChildNodes() && rootNode != destNode) {
+		var child_amount = rootNode.childNodes.length;
+		for(var i = 0; i < child_amount; i++) {
+			var next_node = f.createElement("li");
+			next_node.appendChild(createTreeNode(rootNode.childNodes[i], destNode, depth+"."+count));
+			list.appendChild(next_node);
+			count++;
+		}		
+	} 
+	return list;
+}
+		function build(){
+			
+			f.body.appendChild(createTreeNode(document.getElementsByClassName("upper")[0], f, 0));
+f.getElementsByTagName("ol")[0].setAttribute("style", "list-style: none; marigin: 0px; padding: 0px");
+		for (var i=0; i < f.getElementsByTagName("ol").length; i++) {
+		 		f.getElementsByTagName("ol")[i].setAttribute("style", "list-style: none; marigin: 0px; padding: 0px");
+
+		};
+		// f.getElementsByTagName("li")[0].setAttribute("style", "list-style: none; marigin: 0px; padding: 0px");
+	
+			}
+		
+		
+		window.onload = build;
+		/* ]]> */
+</script>
+
+<style type="text/css">
+ol{
+	list-style:  none;
+	margin: 0px;
+	padding:0px;
+}
+
+
+
+</style>
+
+
+	</head>
+
+
+
+	<body>
+<div class="upper"><h2>W3C_DOM: Teilbaum mit Element div als Wurzel auslesen und anzeigen</h2><h3>Die Kindknoten des Elements 
+	div werdem im Unteren Div-Element ausgegeben</h3><p>Das ist der Inhalt eines p-Elements</p> 
+	<table><tr><td>1</td><td>2</td></tr><tr><td>1</td><td>2</td></tr><tr><td>1</td><td>2</td></tr></table></div>
+<hr/>
+<div class="lower"></div>
+	</body>
+</html>

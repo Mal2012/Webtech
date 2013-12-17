@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>Aufgabe 5</title>
+<script type="text/javascript">
+/* <![CDATA[ */
+	function setRequest() {
+		request = new XMLHttpRequest();
+	request.responseType="document";
+		if (!request) {
+			alert("Kann keine XMLHTTP-Instanz erzeugen");
+			return false;
+		} else {
+			var url = document.getElementsByName("url")[0].value;
+			request.open('post', url, true);
+			request.send(null);
+			document.getElementsByName("abs")[0].setAttribute("disabled");
+			
+			request.onreadystatechange = interpretRequest;
+	}
+}
+function interpretRequest() {
+	switch (request.readyState) {
+		case 4:
+			if (request.status != 200) {
+				alert("Der Request wurde abgeschlossen, ist aber nicht OK\nFehler:"+request.status);
+			} else {
+				document.getElementById("pics").getElementsByTagName("tr")[0].removeChild(document.getElementById("pics").getElementsByTagName("td")[0]);
+				document.getElementById("reset").setAttribute("style", "display: normal");
+				var content = request.responseXML.images;
+				for(i = 0; i<content.length; i++){
+				var curNode = document.createElement("tr");
+				var subNode1 = document.createElement("td");
+				var subNode3 = document.createElement("td");
+				var subNode4 = document.createElement("td");
+				var subNode2 = document.createElement("img");
+				subNode2.setAttribute("src", content[i].src);
+				subNode1.appendChild(document.createTextNode(i+1+"-tes Bild: "));
+				subNode3.appendChild(subNode2);
+				subNode4.appendChild(document.createTextNode(" Alternativtext: "+content[i].alt));
+				curNode.appendChild(subNode1);
+				curNode.appendChild(subNode3);
+				curNode.appendChild(subNode4);
+				document.getElementById('pics').appendChild(curNode);
+				}
+			}
+			break;
+		default:
+			break;
+	}
+}
+	/* ]]> */
+</script>
+<style type="text/css">
+	table img {
+		width: 100px;
+		height: 100px;
+		float: float;
+	}
+	td:first-child {
+		color: blue;
+	}
+	
+</style>
+
+	</head>
+
+	<body>
+<h1>Extrahieren von Bildern mit AJAX</h1>
+<p>Geben Sie eine URL f&uuml;r eine Werbressource an, die Bilder enth&auml;lt, zB. eine Webseite.<br/>
+	Nach bet&auml;tigen der Schaltfl&auml;che <strong>Bilder extrahieren</strong> werden die Bilder der angegebenen URL extrahiert und hier angezeigt.
+</p>
+
+<p>URL: <input type="text" value="http://127.0.0.1/Webtech/Blatt3/Aufgabe4.html" name="url"/> <input type="button" value="Bilder extrahieren" name="abs" onclick="setRequest()"/></p>
+<p>Nachfolgend sehene Sie die extrahierten, auf 100x100 Pixel skalierten Bilder</p>
+<div id="reset" style="display: none;"><a href="">Zur&uuml;cksetzen</a></div>
+<table id="pics"><tr><td>(Keine Bilder extrahiert!)</td></tr></table>
+<p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+  </p>
+
+	</body>
+</html>
